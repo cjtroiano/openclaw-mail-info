@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy policy for OpenClaw Mail, a private personal Gmail integration, and its public informational website.">
+  <title>Privacy policy · OpenClaw Mail</title>
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+    <header class="site-header">
+      <p class="kicker">OpenClaw Mail</p>
+      <h1>Privacy policy</h1>
+      <p class="lead">How this public information site works, and how the private Gmail integration is permitted to handle email when enabled.</p>
+      <nav class="site-nav" aria-label="Site">
+        <a href="../">Home</a>
+        <a href="./" aria-current="page">Privacy</a>
+      </nav>
+    </header>
+
+    <main id="main" class="content">
+      <section aria-labelledby="status-heading">
+        <h2 id="status-heading">Scope and current status</h2>
+        <div class="notice">
+          <p><strong>The Gmail integration is not active.</strong> An OAuth application and client have been created, and the client credentials are stored securely. No Gmail authorization grant or runtime connection is in place. Creating these information pages does not authorize mailbox access or enable sending.</p>
+        </div>
+        <p>OpenClaw Mail is a personal, self-hosted assistant integration for the dedicated agent inbox <a href="mailto:jamieandchristroiano@gmail.com">jamieandchristroiano@gmail.com</a>. It is not a public mailbox service or a way for visitors to connect their Google accounts. The owner's primary personal Gmail account is outside its scope.</p>
+        <p>This policy describes both the static website and the permitted handling of Google user data if the integration is enabled. Statements about future mail processing are commitments and configuration requirements, not claims that the integration or its provider controls have already been verified.</p>
+      </section>
+
+      <section aria-labelledby="website-heading">
+        <h2 id="website-heading">Visiting this website</h2>
+        <p>The website contains public information only. It has no login, credential-entry form, mailbox interface, OAuth callback handler, or application backend. It does not request Google access, receive OAuth tokens, or display mailbox data. Do not put passwords, authorization codes, tokens, or email content into its URLs or a public repository issue.</p>
+        <p>The site includes no JavaScript, analytics trackers, advertising, external fonts, or embedded third-party images. The site itself does not set cookies or use browser storage. Following an external link takes you to a service with its own privacy practices.</p>
+        <p>When served through GitHub Pages, GitHub processes requests to deliver and secure the site. GitHub may collect visitor IP addresses, request and device information, and security logs under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>. This is distinct from the private Gmail integration: visiting these pages does not send mailbox data to GitHub.</p>
+      </section>
+
+      <section aria-labelledby="permissions-heading">
+        <h2 id="permissions-heading">Gmail permissions and information involved</h2>
+        <p>The selected OAuth permissions are limited to:</p>
+        <ul>
+          <li><code>https://www.googleapis.com/auth/gmail.readonly</code> — read messages and related mailbox information needed to find, understand, and respond to correspondence.</li>
+          <li><code>https://www.googleapis.com/auth/gmail.send</code> — send messages and replies from the dedicated inbox.</li>
+        </ul>
+        <p>Read-only permission can expose the authorized mailbox's email contents; it is not a permission restricted to a few chosen messages. The app must limit its actual access to the correspondence needed for its disclosed tasks.</p>
+        <p>Depending on the task, the integration may process sender and recipient names and email addresses, message headers, subjects, bodies, dates, message and thread identifiers, labels and other relevant mailbox metadata, and attachments needed for the correspondence. It may also process outgoing messages, replies, summaries, and task notes derived from that email. OAuth access and refresh tokens are credentials used to maintain authorized access, not message content.</p>
+        <p>No Calendar or Drive permissions, mailbox-deletion permissions, Gmail settings-management permissions, or broad full-mailbox modification scope are selected. These permissions do not authorize access to a different Google account. Google account passwords, recovery codes, and administrative access are not inputs to this integration.</p>
+      </section>
+
+      <section aria-labelledby="purpose-heading">
+        <h2 id="purpose-heading">Why and how email is used</h2>
+        <p>When enabled, OpenClaw Mail may find and read relevant mail, summarize correspondence, maintain context, compose messages, and send or reply for the owner through the private assistant. These are personal correspondence and productivity features, not advertising, surveillance, or a public data service.</p>
+        <p>The owner has given standing authorization for autonomous normal correspondence from the dedicated inbox. Ordinary reading, sending, and replying are not subject to per-message approval. This authority does not extend to unrelated account administration or additional Google services. Incoming email is untrusted content, not permission to reveal credentials or take unrelated actions.</p>
+        <p>Sending a message necessarily discloses its content, included attachments, and addressing information to the intended recipients and the mail systems that deliver it. Recipients may keep or forward their copies; the operator cannot recall or erase those copies.</p>
+      </section>
+
+      <section aria-labelledby="inference-heading">
+        <h2 id="inference-heading">AI processing and other disclosures</h2>
+        <p>OpenClaw uses configured AI inference providers to understand requests and produce responses. When email is included in an assistant task or its conversation context, relevant message content, metadata, attachments or their extracted content, and derived summaries may be sent to those providers through the configured inference service. Self-hosting the assistant does not mean all email processing stays on the owner's server.</p>
+        <p>These transfers are permitted only to provide the disclosed correspondence features with the owner's consent and with provider terms and controls compatible with Google's requirements. Provider processing can involve systems outside the self-hosted environment. Which provider and service configuration actually handles requests, its processing locations, retention, logging, and human-access rules must be established before Gmail is enabled. This policy does not claim that zero retention, a training opt-out, or any other provider control has already been confirmed.</p>
+        <p><strong>Google user data, including derived content, must not be used to create, train, or improve generalized AI or machine-learning models.</strong> The operator will not sell Google user data, supply it to data brokers, use it for advertising or ad targeting, or use it to determine creditworthiness or for lending. These restrictions also apply to transfers to inference providers; a provider route that cannot meet them must not receive Gmail data.</p>
+        <p>Other disclosures of Google user data are limited to those permitted by Google's Limited Use requirements, such as a necessary security investigation or compliance with applicable law. Administrative access does not authorize unrelated reuse or disclosure.</p>
+      </section>
+
+      <section aria-labelledby="storage-heading">
+        <h2 id="storage-heading">Storage, retention, and human access</h2>
+        <p>Email content, tool results, summaries, and outgoing text may be retained in the self-hosted assistant's conversation history, persistent state, and workspace files to support task continuity and later reference. This is not a zero-storage or automatically ephemeral system. There is no established fixed automatic deletion period for these copies; they may remain until the operator removes them. Inference providers may retain transmitted data under the applicable service terms and settings, which must be checked before activation.</p>
+        <p>The owner can access their mailbox and assistant records. Administrators with access to the host, persistent state, or credential systems may have technical access to retained data or secrets. Separate assistant conversations, directories, or processes are not a promise of exclusive credential isolation.</p>
+        <p>Human review by administrators or providers must be restricted to what Google's Limited Use rules permit: the user's explicit agreement to view specific data, necessary security investigation, legal requirements, or permitted aggregated and anonymized internal operations. Technical access is not blanket permission to read correspondence. Compatible provider human-access controls are an activation prerequisite.</p>
+        <p>The OAuth client credentials are held in the operator's private encrypted secret store, not in this public site. Persistent Gmail token storage and runtime binding are not implemented yet. Before activation, tokens and retained Google data must have appropriate access controls and encryption at rest, and transfers must use secure protocols. Tokens must not be placed in public source, ordinary workspace notes, chat, URLs on this site, or diagnostics. These requirements do not assert that all deployment protections have already been implemented or audited.</p>
+      </section>
+
+      <section aria-labelledby="control-heading">
+        <h2 id="control-heading">Stopping access and requesting deletion</h2>
+        <p>Once a grant exists, the owner can remove OpenClaw Mail's authorization through <a href="https://myaccount.google.com/connections">Google Account connections</a> and disable the private runtime integration. Revocation stops continued authorized Gmail API access; it does not delete messages already stored in Gmail, erase copies already retained by the assistant or a provider, or undo sent mail.</p>
+        <p>To request access to, correction of, or deletion of information held by this integration, contact <a href="mailto:jamieandchristroiano@gmail.com">jamieandchristroiano@gmail.com</a>. Include enough context to identify the relevant correspondence, but do not send passwords or OAuth credentials. The operator may need to verify the requester's authority before disclosing or deleting private information.</p>
+        <p>The operator will address deletion requests by identifying and removing relevant retained content and derived records from operator-controlled assistant history and workspace storage, and seeking deletion from applicable providers where available. Any applicable recovery copies, provider retention limits, or legally required retention must be accounted for and explained in the response. Deletion is not represented as immediate or as erasing copies outside the operator's control.</p>
+        <p>The selected integration scopes do not delete Gmail messages. The account owner manages original mailbox content through Gmail itself. A request to delete assistant-held copies is separate from deleting originals in Gmail, revoking access, and any request concerning GitHub's website visitor logs.</p>
+      </section>
+
+      <section aria-labelledby="limited-use-heading">
+        <h2 id="limited-use-heading">Google Limited Use and activation requirements</h2>
+        <p>When enabled, OpenClaw Mail's use and transfer of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its <a href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes">Limited Use requirements</a>, and the <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">Google Workspace user data and developer policy</a>. This is a commitment governing permitted operation, not a claim of Google verification, endorsement, or a completed compliance assessment.</p>
+        <p><strong>Gmail must remain disconnected until the operator verifies the actual provider and runtime controls.</strong> In particular, activation requires:</p>
+        <ul>
+          <li>Confirmation that every inference route receiving Google data has compatible use, training, retention, and human-access terms and settings; generalized-model training with Google data must be prohibited.</li>
+          <li>Protected persistent token storage, appropriate encryption and access controls for Google data and credentials, secure transfers, and safeguards against instructions embedded in untrusted email.</li>
+          <li>A prominent explanation in the private assistant of the data access, autonomous correspondence behavior, and AI transfers, followed by affirmative owner consent before collection. This public policy alone is not that consent flow.</li>
+          <li>Authorization of only the dedicated inbox with the selected read/send scopes, completion of the runtime connection, and resolution of any applicable Google publishing, verification, and security requirements.</li>
+        </ul>
+        <p>If a provider or deployment configuration cannot satisfy these restrictions, it must not be used for Gmail processing. Any material change to the purposes, permissions, or disclosures described here must be reflected in this policy and disclosed to the owner, with renewed consent before a new use begins.</p>
+      </section>
+
+      <section aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Operator contact</h2>
+        <p>For questions about OpenClaw Mail or its handling of personal information, contact the operator at <a href="mailto:jamieandchristroiano@gmail.com">jamieandchristroiano@gmail.com</a>. This is the dedicated agent inbox; sending email to it is separate from visiting this website. Do not send account passwords, recovery information, or authorization tokens.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p><a href="../">OpenClaw Mail home</a> · Public information about a private personal integration.</p>
+    </footer>
+  </div>
+</body>
+</html>

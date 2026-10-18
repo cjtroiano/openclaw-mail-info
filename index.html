@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Information about OpenClaw Mail, a private Gmail read-and-send integration for its account owner, and its privacy practices.">
+  <title>OpenClaw Mail — private Gmail assistance</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+    <header class="site-header">
+      <p class="kicker">Private integration · public information</p>
+      <h1>OpenClaw Mail</h1>
+      <p class="lead">Gmail read-and-send assistance for a single account owner, operated through a private, self-hosted OpenClaw assistant.</p>
+      <nav class="site-nav" aria-label="Site">
+        <a href="./" aria-current="page">Overview</a>
+        <a href="privacy/">Privacy policy</a>
+        <a href="mailto:jamieandchristroiano@gmail.com">Contact the operator</a>
+      </nav>
+    </header>
+
+    <main id="main" class="content">
+      <aside class="notice" aria-labelledby="status-heading">
+        <h2 id="status-heading">Gmail is not connected</h2>
+        <p>The OAuth app and client have been created, but no Gmail access has been granted and the private runtime is not connected to Gmail. This page describes the intended use, not an active mail capability. It does not claim Google verification or approval.</p>
+      </aside>
+
+      <section aria-labelledby="purpose-heading">
+        <h2 id="purpose-heading">What the integration is for</h2>
+        <p>OpenClaw Mail is intended to help its account owner read and summarize messages, identify correspondence that needs attention, and compose and send email through the owner's designated Gmail inbox.</p>
+        <p>Once the owner authorizes and enables the integration, the assistant is intended to handle ordinary correspondence autonomously under the owner's standing instructions. It is not designed to ask for approval before every message it sends.</p>
+        <p>This is a private, account-owner integration, not a public email service. There is no public signup, shared inbox access, or invitation to connect a visitor's Google account. The operator's primary personal Gmail account is outside its intended scope.</p>
+      </section>
+
+      <section aria-labelledby="access-heading">
+        <h2 id="access-heading">Intended Gmail access</h2>
+        <p>The selected OAuth scopes are limited to:</p>
+        <ul>
+          <li><strong>Read email</strong> (<code>https://www.googleapis.com/auth/gmail.readonly</code>) to read messages and their associated information for the owner's requests and standing instructions.</li>
+          <li><strong>Send email</strong> (<code>https://www.googleapis.com/auth/gmail.send</code>) to send correspondence on the owner's behalf.</li>
+        </ul>
+        <p>No Calendar or Drive access is requested. Deleting messages and managing Gmail settings are not part of the selected permissions.</p>
+      </section>
+
+      <section aria-labelledby="data-heading">
+        <h2 id="data-heading">How mail information may be handled</h2>
+        <p>When Gmail access is enabled, the private OpenClaw runtime may process message content and associated information to perform these tasks. Mail content may be sent to configured AI inference providers and may be retained in self-hosted conversations or workspaces.</p>
+        <p>Before enabling Gmail, the operator must configure inference providers and data handling to comply with Google's applicable user-data requirements. Google user data must not be used to train generalized AI or machine-learning models.</p>
+        <p>Read the <a href="privacy/">privacy policy</a> for the intended data use, storage, sharing, access controls, and how to ask about deletion or revoke access.</p>
+      </section>
+
+      <section aria-labelledby="site-heading">
+        <h2 id="site-heading">About this website</h2>
+        <p>This static site provides information about the integration and its privacy practices. It does not sign you in, accept credentials, handle OAuth callbacks, or display mailbox data. There is no backend or interactive Gmail connection on this site.</p>
+        <p>The site does not include analytics scripts, external fonts, or third-party embedded content. GitHub Pages, the site hosting provider, may collect visitor IP addresses and security-related information as part of operating its service.</p>
+      </section>
+
+      <section aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <p>For questions about OpenClaw Mail or its handling of information, contact the operator at <a href="mailto:jamieandchristroiano@gmail.com">jamieandchristroiano@gmail.com</a>. This is the designated agent inbox; do not send passwords, access tokens, or other credentials.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>OpenClaw Mail is independently operated. It is not a Google product and is not affiliated with or endorsed by Google.</p>
+      <p><a href="privacy/">Privacy policy</a></p>
+    </footer>
+  </div>
+</body>
+</html>
