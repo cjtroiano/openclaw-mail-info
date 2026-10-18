@@ -41,7 +41,7 @@ Google may still require an additional ownership or verification step; the publi
 
 ## Activation and maintenance
 
-The privacy policy describes the integration's permitted use when enabled. Before allowing Gmail contents into an AI provider, verify compatible training, retention and human-access controls under Google's Limited Use rules. Also verify protected token persistence and appropriate encryption/access controls for retained Google data, safeguards for untrusted mail, and prominent in-product disclosure with affirmative owner consent. Publishing this policy is not proof that those controls or consent exist; it does not add a per-email approval requirement.
+Before allowing Gmail contents into an AI provider, verify compatible training, retention and human-access controls under Google's Limited Use rules, protected token persistence, safeguards for untrusted mail, and prominent in-product disclosure with affirmative owner consent. The operator declined filesystem encryption: retained assistant history/workspaces remain on existing storage, and the policy explicitly discloses the resulting restricted-scope security gap. Do not claim that encrypted token storage protects all mail copies or that owner risk acceptance establishes Google-policy compliance. Publishing this policy is not proof of the controls or consent; it does not add per-email approval.
 
 Keep the policy aligned with actual permissions, AI-provider processing, retention and deletion behavior. If the OAuth app name or operator contact changes, update the overview, policy and Google branding together. No analytics, external fonts, third-party scripts, forms or browser storage are used by these pages; GitHub operates the hosting and can retain visitor/security logs.
 

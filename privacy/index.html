@@ -22,12 +22,12 @@
 
     <main id="main" class="content">
       <section aria-labelledby="status-heading">
-        <h2 id="status-heading">Scope and current status</h2>
+        <h2 id="status-heading">Scope and authorization</h2>
         <div class="notice">
-          <p><strong>The Gmail integration is not active.</strong> An OAuth application and client have been created, and the client credentials are stored securely. No Gmail authorization grant or runtime connection is in place. Creating these information pages does not authorize mailbox access or enable sending.</p>
+          <p><strong>Mailbox access requires separate owner authorization.</strong> The dedicated Google account must grant the selected permissions before the private runtime can use Gmail. Publishing or visiting these pages does not authorize mailbox access, establish a runtime connection or enable sending. This policy is not evidence of Google verification or approval.</p>
         </div>
         <p>OpenClaw Mail is a personal, self-hosted assistant integration for the dedicated agent inbox <a href="mailto:jamieandchristroiano@gmail.com">jamieandchristroiano@gmail.com</a>. It is not a public mailbox service or a way for visitors to connect their Google accounts. The owner's primary personal Gmail account is outside its scope.</p>
-        <p>This policy describes both the static website and the permitted handling of Google user data if the integration is enabled. Statements about future mail processing are commitments and configuration requirements, not claims that the integration or its provider controls have already been verified.</p>
+        <p>This policy describes the static website, permitted mail processing after authorization, and the deployment's data-protection limitations. It does not claim that authorization or all provider controls have already been verified.</p>
       </section>
 
       <section aria-labelledby="website-heading">
@@ -39,11 +39,12 @@
 
       <section aria-labelledby="permissions-heading">
         <h2 id="permissions-heading">Gmail permissions and information involved</h2>
-        <p>The selected OAuth permissions are limited to:</p>
+        <p>The selected Gmail data permissions are limited to:</p>
         <ul>
           <li><code>https://www.googleapis.com/auth/gmail.readonly</code> — read messages and related mailbox information needed to find, understand, and respond to correspondence.</li>
           <li><code>https://www.googleapis.com/auth/gmail.send</code> — send messages and replies from the dedicated inbox.</li>
         </ul>
+        <p>The OAuth client also requests <code>openid</code> and email identity permissions (<code>email</code> and/or <code>https://www.googleapis.com/auth/userinfo.email</code>) to verify the authorizing account. These identity permissions are not authorization for Calendar, Drive, contacts or another Google data service.</p>
         <p>Read-only permission can expose the authorized mailbox's email contents; it is not a permission restricted to a few chosen messages. The app must limit its actual access to the correspondence needed for its disclosed tasks.</p>
         <p>Depending on the task, the integration may process sender and recipient names and email addresses, message headers, subjects, bodies, dates, message and thread identifiers, labels and other relevant mailbox metadata, and attachments needed for the correspondence. It may also process outgoing messages, replies, summaries, and task notes derived from that email. OAuth access and refresh tokens are credentials used to maintain authorized access, not message content.</p>
         <p>No Calendar or Drive permissions, mailbox-deletion permissions, Gmail settings-management permissions, or broad full-mailbox modification scope are selected. These permissions do not authorize access to a different Google account. Google account passwords, recovery codes, and administrative access are not inputs to this integration.</p>
@@ -69,7 +70,8 @@
         <p>Email content, tool results, summaries, and outgoing text may be retained in the self-hosted assistant's conversation history, persistent state, and workspace files to support task continuity and later reference. This is not a zero-storage or automatically ephemeral system. There is no established fixed automatic deletion period for these copies; they may remain until the operator removes them. Inference providers may retain transmitted data under the applicable service terms and settings, which must be checked before activation.</p>
         <p>The owner can access their mailbox and assistant records. Administrators with access to the host, persistent state, or credential systems may have technical access to retained data or secrets. Separate assistant conversations, directories, or processes are not a promise of exclusive credential isolation.</p>
         <p>Human review by administrators or providers must be restricted to what Google's Limited Use rules permit: the user's explicit agreement to view specific data, necessary security investigation, legal requirements, or permitted aggregated and anonymized internal operations. Technical access is not blanket permission to read correspondence. Compatible provider human-access controls are an activation prerequisite.</p>
-        <p>The OAuth client credentials are held in the operator's private encrypted secret store, not in this public site. Persistent Gmail token storage and runtime binding are not implemented yet. Before activation, tokens and retained Google data must have appropriate access controls and encryption at rest, and transfers must use secure protocols. Tokens must not be placed in public source, ordinary workspace notes, chat, URLs on this site, or diagnostics. These requirements do not assert that all deployment protections have already been implemented or audited.</p>
+        <p>The OAuth client credentials and keyring-unlock material are managed through the operator's private secret store, not this public site. Gmail tokens must use protected persistent storage with an encrypted client keyring and restrictive access permissions; transfers must use secure protocols. Runtime access and credential copies remain within the self-hosted system's existing trust boundary. Tokens must not be placed in public source, ordinary workspace notes, chat, URLs on this site, or diagnostics.</p>
+        <p><strong>Retained assistant history and workspace files are not covered by filesystem encryption in this deployment.</strong> The operator has chosen to retain the existing storage rather than migrate it to an encrypted filesystem. File permissions and private network access are not encryption, and an encrypted token keyring does not encrypt retained messages or derived notes. Google's restricted-scope security requirements call for encryption at rest; this deployment does not claim that requirement is satisfied for all retained data or credential copies. Owner acceptance of this limitation is not a Google policy waiver or approval.</p>
       </section>
 
       <section aria-labelledby="control-heading">
@@ -82,15 +84,15 @@
 
       <section aria-labelledby="limited-use-heading">
         <h2 id="limited-use-heading">Google Limited Use and activation requirements</h2>
-        <p>When enabled, OpenClaw Mail's use and transfer of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its <a href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes">Limited Use requirements</a>, and the <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">Google Workspace user data and developer policy</a>. This is a commitment governing permitted operation, not a claim of Google verification, endorsement, or a completed compliance assessment.</p>
-        <p><strong>Gmail must remain disconnected until the operator verifies the actual provider and runtime controls.</strong> In particular, activation requires:</p>
+        <p>Permitted use and transfer of information received from Google APIs are limited by the <a href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes">Google API Services Limited Use requirements</a>. The <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">Google Workspace user data and developer policy</a> also sets applicable security requirements. This policy does not claim Google verification, endorsement or full compliance; the retained-storage protection gap is disclosed above.</p>
+        <p><strong>Before Gmail data is processed by an AI provider, the operator must verify the actual inference and authorization controls.</strong> These include:</p>
         <ul>
           <li>Confirmation that every inference route receiving Google data has compatible use, training, retention, and human-access terms and settings; generalized-model training with Google data must be prohibited.</li>
-          <li>Protected persistent token storage, appropriate encryption and access controls for Google data and credentials, secure transfers, and safeguards against instructions embedded in untrusted email.</li>
-          <li>A prominent explanation in the private assistant of the data access, autonomous correspondence behavior, and AI transfers, followed by affirmative owner consent before collection. This public policy alone is not that consent flow.</li>
-          <li>Authorization of only the dedicated inbox with the selected read/send scopes, completion of the runtime connection, and resolution of any applicable Google publishing, verification, and security requirements.</li>
+          <li>Protected persistent token storage, restrictive credential access, secure transfers, and safeguards against instructions embedded in untrusted email. The retained-history/workspace encryption limitation above remains; it is not resolved by token protection.</li>
+          <li>A prominent explanation in the private integration's setup interface of the data access, autonomous correspondence behavior, retention and AI transfers, followed by affirmative owner consent before collection. This public policy alone is not that consent flow.</li>
+          <li>Authorization of only the dedicated inbox with the selected read/send scopes, verification of the runtime connection and grant, and resolution of actual Google authorization requirements. A successful OAuth grant is not evidence of full Google-policy compliance.</li>
         </ul>
-        <p>If a provider or deployment configuration cannot satisfy these restrictions, it must not be used for Gmail processing. Any material change to the purposes, permissions, or disclosures described here must be reflected in this policy and disclosed to the owner, with renewed consent before a new use begins.</p>
+        <p>An inference route that cannot satisfy the Limited Use restrictions must not receive Gmail data. Any material change to the purposes, permissions, or disclosures described here must be reflected in this policy and disclosed to the owner, with renewed consent before a new use begins.</p>
       </section>
 
       <section aria-labelledby="contact-heading">

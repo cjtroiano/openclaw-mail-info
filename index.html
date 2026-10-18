@@ -24,8 +24,8 @@
 
     <main id="main" class="content">
       <aside class="notice" aria-labelledby="status-heading">
-        <h2 id="status-heading">Gmail is not connected</h2>
-        <p>The OAuth app and client have been created, but no Gmail access has been granted and the private runtime is not connected to Gmail. This page describes the intended use, not an active mail capability. It does not claim Google verification or approval.</p>
+        <h2 id="status-heading">Authorization happens separately</h2>
+        <p>Mailbox access requires the owner's separate Google authorization and a private runtime connection. Publishing or visiting this website does not authorize mail access or enable sending. This site does not claim Google verification, approval or full policy compliance; the privacy policy describes the deployment's data-protection limitations.</p>
       </aside>
 
       <section aria-labelledby="purpose-heading">
@@ -37,18 +37,19 @@
 
       <section aria-labelledby="access-heading">
         <h2 id="access-heading">Intended Gmail access</h2>
-        <p>The selected OAuth scopes are limited to:</p>
+        <p>The selected Gmail data scopes are limited to:</p>
         <ul>
           <li><strong>Read email</strong> (<code>https://www.googleapis.com/auth/gmail.readonly</code>) to read messages and their associated information for the owner's requests and standing instructions.</li>
           <li><strong>Send email</strong> (<code>https://www.googleapis.com/auth/gmail.send</code>) to send correspondence on the owner's behalf.</li>
         </ul>
+        <p>The client also requests OpenID/email identity permissions to verify which Google account granted access. Those permissions do not add Calendar, Drive or other Google data services.</p>
         <p>No Calendar or Drive access is requested. Deleting messages and managing Gmail settings are not part of the selected permissions.</p>
       </section>
 
       <section aria-labelledby="data-heading">
         <h2 id="data-heading">How mail information may be handled</h2>
         <p>When Gmail access is enabled, the private OpenClaw runtime may process message content and associated information to perform these tasks. Mail content may be sent to configured AI inference providers and may be retained in self-hosted conversations or workspaces.</p>
-        <p>Before enabling Gmail, the operator must configure inference providers and data handling to comply with Google's applicable user-data requirements. Google user data must not be used to train generalized AI or machine-learning models.</p>
+        <p>Before Gmail data is sent to an AI provider, the operator must verify compatible provider-use and data controls. Google user data must not be used to train generalized AI or machine-learning models. The privacy policy separately discloses the deployment's retained-storage encryption limitation.</p>
         <p>Read the <a href="privacy/">privacy policy</a> for the intended data use, storage, sharing, access controls, and how to ask about deletion or revoke access.</p>
       </section>
 
